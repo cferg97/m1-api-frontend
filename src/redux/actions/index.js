@@ -21,14 +21,14 @@ export const getPostDataAction = () => {
   };
 };
 
-export const getPDFAction = (id) => {
-  return async () => {
-    try {
-      await fetch(
-        `https://m1-d2-production.up.railway.app/blogposts/pdf/${id}`
-      );
-    } catch (err) {
-      console.log(err);
-    }
-  };
-};
+// export const getPDFAction = (id) => {
+//   return async () => {
+//     try {
+//       await fetch(
+//         `https://m1-d2-production.up.railway.app/blogposts/pdf/${id}`
+//       );
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   };
+// };

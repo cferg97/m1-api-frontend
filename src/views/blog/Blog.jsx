@@ -50,13 +50,20 @@ const Blog = (props) => {
                 }}
               >
                 <BlogLike defaultLikes={["123"]} onChange={console.log} />
-                
+
                 <Button
-                  onClick={() => dispatch(getPDFAction(blog.id))}
+                  // onClick={() => dispatch(getPDFAction(blog.id))}
                   variant="info"
                   className="mt-2"
                 >
-                  Generate PDF
+                  <a
+                    href={
+                      `http://m1-d2-production.up.railway.app/blogposts/pdf/` +
+                      blog.id
+                    }
+                  >
+                    Generate PDF
+                  </a>
                 </Button>
               </div>
             </div>
