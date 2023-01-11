@@ -47,7 +47,9 @@ const Blog = (props) => {
                 }}
               >
                 <BlogLike defaultLikes={["123"]} onChange={console.log} />
-                <Button variant="info">Generate PDF</Button>
+                <Button variant="info" className="mt-2">
+                  Generate PDF
+                </Button>
               </div>
             </div>
           </div>
