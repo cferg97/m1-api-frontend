@@ -52,7 +52,7 @@ const Blog = (props) => {
                 <BlogLike defaultLikes={["123"]} onChange={console.log} />
                 
                 <Button
-                  onClick={(id) => dispatch(getPDFAction(id))}
+                  onClick={() => dispatch(getPDFAction(blog.id))}
                   variant="info"
                   className="mt-2"
                 >
