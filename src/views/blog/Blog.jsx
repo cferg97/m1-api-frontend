@@ -7,7 +7,7 @@ import BlogLike from "../../components/likes/BlogLike";
 import { useSelector } from "react-redux";
 import "./styles.css";
 const Blog = (props) => {
-  const posts = useSelector((state) => state.posts)
+  const posts = useSelector((state) => state.posts);
 
   const [blog, setBlog] = useState({});
   const [loading, setLoading] = useState(true);
@@ -15,7 +15,7 @@ const Blog = (props) => {
   const navigate = useNavigate();
   useEffect(() => {
     const { id } = params;
-    const blog = posts.find((post) => post._id.toString() === id);
+    const blog = posts.find((post) => post.id.toString() === id);
 
     if (blog) {
       setBlog(blog);
