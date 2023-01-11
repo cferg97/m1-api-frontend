@@ -24,7 +24,7 @@ export const getPostDataAction = () => {
 export const getPDFAction = (id) => {
   return async (dispatch, getState) => {
     try {
-      let response = await fetch(
+      await fetch(
         `https://m1-d2-production.up.railway.app/blogposts/pdf/${id}`
       );
     } catch (err) {
