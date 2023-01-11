@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image, Button } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import BlogAuthor from "../../components/blog/blog-author/BlogAuthor";
 import BlogLike from "../../components/likes/BlogLike";
 // import posts from "../../data/posts.json";
 import { useSelector } from "react-redux";
 import "./styles.css";
+import { getPDFAction } from "../../redux/actions";
 const Blog = (props) => {
   const posts = useSelector((state) => state.posts);
 
@@ -13,6 +15,7 @@ const Blog = (props) => {
   const [loading, setLoading] = useState(true);
   const params = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   useEffect(() => {
     const { id } = params;
     const blog = posts.find((post) => post.id.toString() === id);
@@ -47,9 +50,14 @@ const Blog = (props) => {
                 }}
               >
                 <BlogLike defaultLikes={["123"]} onChange={console.log} />
-                  <Button onClick={navigate("/blogposts/pdf/" + blog.id)} variant="info" className="mt-2">
-                    Generate PDF
-                  </Button>
+                
+                <Button
+                  onClick={(id) => dispatch(getPDFAction(id))}
+                  variant="info"
+                  className="mt-2"
+                >
+                  Generate PDF
+                </Button>
               </div>
             </div>
           </div>
