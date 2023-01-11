@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image, Button } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import BlogAuthor from "../../components/blog/blog-author/BlogAuthor";
 import BlogLike from "../../components/likes/BlogLike";
 // import posts from "../../data/posts.json";
@@ -47,9 +47,11 @@ const Blog = (props) => {
                 }}
               >
                 <BlogLike defaultLikes={["123"]} onChange={console.log} />
-                <Button variant="info" className="mt-2">
-                  Generate PDF
-                </Button>
+                <Link to={"/blogposts/pdf/" + blog.id}>
+                  <Button variant="info" className="mt-2">
+                    Generate PDF
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
