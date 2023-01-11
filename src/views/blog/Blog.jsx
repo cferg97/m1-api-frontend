@@ -47,11 +47,9 @@ const Blog = (props) => {
                 }}
               >
                 <BlogLike defaultLikes={["123"]} onChange={console.log} />
-                <Link to={"/blogposts/pdf/" + blog.id}>
-                  <Button variant="info" className="mt-2">
+                  <Button onClick={navigate("/blogposts/pdf/" + blog.id)} variant="info" className="mt-2">
                     Generate PDF
                   </Button>
-                </Link>
               </div>
             </div>
           </div>
