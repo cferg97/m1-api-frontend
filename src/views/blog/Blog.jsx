@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Image } from "react-bootstrap";
+import { Container, Image, Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import BlogAuthor from "../../components/blog/blog-author/BlogAuthor";
 import BlogLike from "../../components/likes/BlogLike";
@@ -47,6 +47,7 @@ const Blog = (props) => {
                 }}
               >
                 <BlogLike defaultLikes={["123"]} onChange={console.log} />
+                <Button variant="info">Generate PDF</Button>
               </div>
             </div>
           </div>
